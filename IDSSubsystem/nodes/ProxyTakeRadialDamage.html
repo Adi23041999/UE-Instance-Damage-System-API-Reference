@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>Proxy Take Radial Damage</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../../index.html">IDS2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style" href="../IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">Proxy Take Radial Damage</a>
+      <h1 class="title_style">Proxy Take Radial Damage</h1>
+      <p>Detects and applies radial damage to proxy instances in the given radius</p>
+      <img class="node_image_style" src="../img/nd_img_ProxyTakeRadialDamage.jpg" />
+      <h3 class="title_style">Inputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">In</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Target</div>
+              <div class="param_type">Instance Damage Subsystem Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Origin</div>
+              <div class="param_type">Vector</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Radial Damage Params</div>
+              <div class="param_type">Radial Damage Params Structure</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Instigated By</div>
+              <div class="param_type">Controller Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage Causer</div>
+              <div class="param_type">Actor Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage Type Class</div>
+              <div class="param_type">Damage Type Class Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="title_style">Outputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Out</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Destructible Hits</div>
+              <div class="param_type">Array of Hit Result Structures</div>
+            </td>
+            <td>
+              <p>list of spawned and hit destructibles</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Applied Damages</div>
+              <div class="param_type">Array of Float (single-precision)s</div>
+            </td>
+            <td>
+              <p>damage values applied to the spawned destructibles</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

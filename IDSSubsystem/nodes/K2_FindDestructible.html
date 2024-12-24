@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>Find Destructible</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../../index.html">IDS2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style" href="../IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">Find Destructible</a>
+      <h1 class="title_style">Find Destructible</h1>
+      <p>Tries to find a destructible for the given proxy instance</p>
+      <img class="node_image_style" src="../img/nd_img_K2_FindDestructible.jpg" />
+      <h3 class="title_style">Inputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Target</div>
+              <div class="param_type">Instance Damage Subsystem Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Proxy Instance</div>
+              <div class="param_type">IDSProxy Instance Structure</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage Asset</div>
+              <div class="param_type">Soft Object Reference</div>
+            </td>
+            <td>
+              <p>is optional but if provided it will call GetDestructible instead of iterating the pool so it is recommended to set if the damage asset is known. The asset can also be sources from the proxy if it is valid.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="title_style">Outputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Return Value</div>
+              <div class="param_type">IDSDestructible Instance Structure</div>
+            </td>
+            <td>
+              <p>found destructible instance or nullptr</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

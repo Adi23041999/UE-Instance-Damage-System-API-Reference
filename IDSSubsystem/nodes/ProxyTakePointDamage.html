@@ -1,0 +1,153 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>Proxy Take Point Damage</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../../index.html">IDS2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style" href="../IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">Proxy Take Point Damage</a>
+      <h1 class="title_style">Proxy Take Point Damage</h1>
+      <p>Applies point damage to a proxy instance</p>
+      <img class="node_image_style" src="../img/nd_img_ProxyTakePointDamage.jpg" />
+      <h3 class="title_style">Inputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">In</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Target</div>
+              <div class="param_type">Instance Damage Subsystem Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Proxy</div>
+              <div class="param_type">Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Instance Index</div>
+              <div class="param_type">Integer</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage</div>
+              <div class="param_type">Float (single-precision)</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Hit Location</div>
+              <div class="param_type">Vector</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Shot from Direction</div>
+              <div class="param_type">Vector</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage Type Class</div>
+              <div class="param_type">Damage Type Class Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Instigated By</div>
+              <div class="param_type">Controller Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Damage Causer</div>
+              <div class="param_type">Actor Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="title_style">Outputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Out</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Destructible Hit</div>
+              <div class="param_type">Hit Result Structure</div>
+            </td>
+            <td>
+              <p>spawned destructible if enough damage has been applied to switch the proxy instance</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Destructible</div>
+              <div class="param_type">IDSDestructible Instance Structure</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

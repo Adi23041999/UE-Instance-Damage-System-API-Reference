@@ -1,0 +1,139 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>IDSDeveloperSettings (Instance Damage)</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">IDS2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">IDSDeveloperSettings (Instance Damage)</a>
+      <h1 class="title_style">IDSDeveloperSettings (Instance Damage)</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/IDSDeveloperSettings.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; DeveloperSettings &gt; DeveloperSettingsBackedByCVars &gt; IDSDeveloperSettings (Instance Damage)</i>
+      </p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Configure the Instance Damage plugin</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%" class="prop_type_style">TSoftClassPtr&lt;UIDSSubsystem&gt; </td>
+            <td width="20%" class="prop_display_name_style">SubsystemtoInit</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">RegisterSubsystemTick</td>
+            <td width="60%">Whether to register the subsystem's tick function by default</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">DamageSetups</td>
+            <td width="60%">Data table that stores the systems's setup information for each asset</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">SupportNonSetupProxyClasses</td>
+            <td width="60%">Whether the system supports primitive classes as proxies that are not setup directly for it (like default ISM/HISM component classes).
+Works in singleplayer only
+The system checks on tick whether the proxies are alive or not.</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">NonSetupProxiesUpdateRate</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RemovalTimeInterval</td>
+            <td width="60%">How often to check for removal of the destructibles from the world
+Setting to &lt; 0 will disable the check</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RemovalDistanceMultiplier</td>
+            <td width="60%">Global removal distance multiplier for all destructibles</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RespawnTimeInterval</td>
+            <td width="60%">Time interval at which destroyed instances will be respawned (as long as the player is out of range)
+Setting to &lt; 0 will disable respawning</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RespawnDistanceMultiplier</td>
+            <td width="60%">Global instance respawn distance multiplier</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">RespawnUnstreamedProxiesOnly</td>
+            <td width="60%">Whether to respawn proxy instances that aren't alive only. Disabled on servers</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">EIDSDestructibleNetworkingMode</td>
+            <td width="20%" class="prop_display_name_style">NetworkingMode</td>
+            <td width="60%">Default networking mode for spawning destructibles. Can be overriden per damage setup</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">ReplicatedServerDestructibleHiddenInstanceCheckInterval</td>
+            <td width="60%">How often to check whether we should hide a server replicated instance that was supposed to be hidden by server replicated destructible (but it wasn't eg. due to relevancy)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">ReplicatedServerDestructibleHiddenInstanceMaxAge</td>
+            <td width="60%">If a server destructible does not replicate to a client in this time we will force the instance to hide to keep instance visibility in sync with server</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">DefaultHitForceThreshold</td>
+            <td width="60%">Default physics hit force needed to switch from proxies to destructibles</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TEnumAsByte&lt;ECollisionChannel&gt;</td>
+            <td width="20%" class="prop_display_name_style">DestructibleProxyCollisionChannel</td>
+            <td width="60%">The collision channel used by destructible proxies</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">DestructibleMaskFilterBit</td>
+            <td width="60%">This is used to make destruction objects ignore destructibles when sweeping against them
+Set to -1 to disable</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">InstanceCustomDataLocalVisibilityIndex</td>
+            <td width="60%">The index in instanced meshes' custom data used to store instance visibility
+NumCustomDataFloats in the instanced mesh components should be bigger than this value</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">InstanceCustomDataDamageIndex</td>
+            <td width="60%">The index in instanced meshes' custom data used to store instance damage
+NumCustomDataFloats in the instanced mesh components should be bigger than this value</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">DestructibleTraceDistanceOffset</td>
+            <td width="60%">Whenever a proxy recieves point damage (from a line trace) we repeat the line trace on the spawned destructible at this offset from the initial proxy hit point</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">DebugDistance</td>
+            <td width="60%">Max squared distance debug info will be drawn at</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody />
+      </table>
+    </div>
+  </body>
+</html>

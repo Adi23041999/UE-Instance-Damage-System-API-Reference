@@ -1,0 +1,323 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>IDSSubsystem (Instance Damage Subsystem)</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">IDS2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">IDSSubsystem (Instance Damage Subsystem)</a>
+      <h1 class="title_style">IDSSubsystem (Instance Damage Subsystem)</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/IDSSubsystem.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Subsystem &gt; WorldSubsystem &gt; IDSSubsystem (Instance Damage Subsystem)</i>
+      </p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Central managing point of the plugin</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">DamageInfo</td>
+            <td width="60%">Damage info per damage asset (eg. collected from the plugin settings data table)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FIDSSubsystemTickFunction</td>
+            <td width="20%" class="prop_display_name_style">IDSTickFunction</td>
+            <td width="60%">Tick function for this subsystem</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">CustomTimeDilation</td>
+            <td width="60%">Time dilation for this subsystem tick</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RespawnTimer</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">RemovalTimer</td>
+            <td width="60%" />
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/AddDamageSetup.html">Add Damage Setup</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddDamageSetupsFromTable.html">Add Damage Setups from Table</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CanSwitchToDestructible.html">Can Switch to Destructible</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_FindDestructible.html">Find Destructible</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_ForceVisibilityUpdate.html">Force Visibility Update</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetCachedTransform.html">Get Cached Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetClientProxyInstance.html">Get Client Proxy Instance</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDamageAssetFromProxy.html">Get Damage Asset from Proxy</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_GetDamageSetup.html">Get Damage Setup</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDataToSave.html">Get Data to Save</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_GetDestructibleInfo.html">Get Destructible Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDestructibleNetworkingMode.html">Get Destructible Networking Mode</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_GetDestructionObjectInfo.html">Get Destruction Object Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_GetProxy.html">Get Proxy</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_GetProxyHash.html">Get Proxy Hash</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetProxyInstanceDamage.html">Get Proxy Instance Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetProxyInstanceTransform.html">Get Proxy Instance Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetRemovalDistance.html">Get Removal Distance</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetRespawnDistance.html">Get Respawn Distance</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetFromDestructiblePool.html">Get from Destructible Pool</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HasDamageAuthority.html">Has Damage Authority</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HasDamageSetup.html">Has Damage Setup</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HideProxyInstance.html">Hide Proxy Instance</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsDebugOn.html">Is Debug On</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsProxyInstanceHidden.html">Is Proxy Instance Hidden</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsProxyInstanceHiddenDirect.html">Is Proxy Instance Hidden Direct</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsProxyInstanceValid.html">Is Proxy Instance Valid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsProxyRegistered.html">Is Proxy Registered</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsRespawnSpotBlocked.html">Is Respawn Spot Blocked</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/LoadFromSavedData.html">Load from Saved Data</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_MarkDestructionBodyListDirty.html">Mark Destruction Body List Dirty</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyBeginOverlap.html">Proxy Begin Overlap</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyHit.html">Proxy Hit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyInstanceTakeDamage.html">Proxy Instance Take Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyTakeGenericDamage.html">Proxy Take Generic Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyTakePointDamage.html">Proxy Take Point Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ProxyTakeRadialDamage.html">Proxy Take Radial Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_RegisterDestructionObject.html">Register Destruction Object</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RegisterProxy.html">Register Proxy</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_RegisterReplicatedProxyMapping.html">Register Replicated Proxy Mapping</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveDestructiblesAfterTimeout.html">Remove Destructibles After Timeout</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ResetProxyInstanceDamage.html">Reset Proxy Instance Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ResetSystem.html">Reset System</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RespawnInstances.html">Respawn Instances</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetProxyInstanceDamage.html">Set Proxy Instance Damage</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ShowProxyInstance.html">Show Proxy Instance</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ShowProxyInstancesSingleMesh.html">Show Proxy Instances Single Mesh</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SwapProxy.html">Swap Proxy</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SwapProxyFromHit.html">Swap Proxy from Hit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ToggleDebug.html">Toggle Debug</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_UnregisterDestructionObject.html">Unregister Destruction Object</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UnregisterProxy.html">Unregister Proxy</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_UnregisterReplicatedProxyMapping.html">Unregister Replicated Proxy Mapping</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

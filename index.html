@@ -1,0 +1,1053 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>IDS2_API_Reference</title>
+    <link rel="stylesheet" type="text/css" href="./css/bpdoc.css" />
+    <script src="./scripts/Filtering.js">
+      <!--Empty comment to keep the closing tag-->
+    </script>
+  </head>
+  <body onload="onPageLoaded();">
+    <div id="content_container">
+      <a class="navbar_style">IDS2_API_Reference</a>
+      <h1 class="title_style">IDS2_API_Reference</h1>
+      <h2 class="title_style">Classes</h2>
+      <hr />
+      <label for="groupfilters">Filter by category:</label>
+      <select name="groupfilters" id="groupfilters" onchange="onFilterChanged()">
+        <!--Empty comment to keep the closing tag-->
+      </select>
+      <hr />
+      <table>
+        <tbody>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSDamageableISMC/IDSDamageableISMC.html">IDSDamageableISMC</a>
+              <div class="group_type">IDS</div>
+            </td>
+            <td width="70%">Damageable foliage class setup to be used with Instance Damage System plugin
+Can be used directly on foliage or added as a component to actors in blueprints
+
+bComponentReplicates has to be set to true for replication only if the component is spawned during runtime,
+otherwise replication is working on meshes placed in the levels only (for example through the UE foliage system)</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSDestructibleInterface/IDSDestructibleInterface.html">IDSDestructibleInterface</a>
+              <div class="group_type" />
+            </td>
+            <td width="70%">## UInterface cannot be documented ##</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSDestructionObjectInterface/IDSDestructionObjectInterface.html">IDSDestructionObjectInterface</a>
+              <div class="group_type" />
+            </td>
+            <td width="70%">## UInterface cannot be documented ##</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSDeveloperSettings/IDSDeveloperSettings.html">IDSDeveloperSettings (Instance Damage)</a>
+              <div class="group_type">IDS</div>
+            </td>
+            <td width="70%">Configure the Instance Damage plugin</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSFunctionLibrary/IDSFunctionLibrary.html">IDSFunctionLibrary</a>
+              <div class="group_type">IDS</div>
+            </td>
+            <td width="70%">Instance Damage System utility functions</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSReplicationProxyComponent/IDSReplicationProxyComponent.html">IDSReplicationProxyComponent</a>
+              <div class="group_type">IDS</div>
+            </td>
+            <td width="70%">Component responsible for proxy instance visibility replication</td>
+          </tr>
+          <tr>
+            <td width="5%">
+              <div class="param_name title_style">C++</div>
+            </td>
+            <td width="25%">
+              <a href="./IDSSubsystem/IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
+              <div class="group_type">IDS</div>
+            </td>
+            <td width="70%">Central managing point of the plugin</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 class="title_style">Structs</h2>
+      <hr />
+      <table>
+        <tbody>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDamageInfo</div>
+            </td>
+            <td width="25%">
+              <div>Proxy damage settings
+These settings define how proxy instances react when they are interacted (damaged) with
+Defined per damage asset (eg. a static mesh asset) which proxy objects use when interacted with (eg. an instanced static mesh component)</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">DamageAsset</td>
+                    <td width="60%">The asset the to apply these settings to
+By default only static mesh asset is supported
+Eg. the settings will apply to objects registered within the subsystem that return this asset
+For example an instanced static mesh component</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftClassPtr&lt;UObject&gt; </td>
+                    <td width="20%" class="prop_display_name_style">DestructibleClass</td>
+                    <td width="60%">The destructible to spawn in place of an instance. By default an actor class is supported only. Override subsystem SpawnDestructibleFromClass function to handle more cases</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">PreloadDestructibleClass</td>
+                    <td width="60%">Whether the actor class should be loaded into memory whenever an instanced mesh is valid
+NOTE: this option only works with Damageable ISMC class</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">DamageThreshold</td>
+                    <td width="60%">Damage an instance can take before switching to a destructible. Applies to point/radial damages</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">HitForceThreshold</td>
+                    <td width="60%">Hit force needed to switch to a destructible. Applies to physics (overlap/hit) damages</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">PoolSize</td>
+                    <td width="60%">Amount of destructibles that can be in the world at once. Spawned destructibles are reused. Set to &lt;= to disable pooling</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">DestroyifFailedtoPool</td>
+                    <td width="60%">Whether to destroy destructibles that failed to be reused from the pool</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSDestructibleRemovalHandling</td>
+                    <td width="20%" class="prop_display_name_style">RemovalHandling</td>
+                    <td width="60%">Defines how to handle the removal of the destructibles</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">UnrenderedRemovalSafeDistance</td>
+                    <td width="60%">Destructible removal safe distance for non rendered destructibles</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">RemovalDistance</td>
+                    <td width="60%">Squared distance from the player at which a destructible can be removed from the world</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">LifeSpan</td>
+                    <td width="60%">Life span of the spawned destructibles independent of the RemovalHandling setting. Reset when reused from the pool</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">OverrideNetworkingMode</td>
+                    <td width="60%">Whether to override the project settings default networking mode for this specific damage setup</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSDestructibleNetworkingMode</td>
+                    <td width="20%" class="prop_display_name_style">NetworkingModeOverride</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">NetworkCanAdjustDestructibleLocation</td>
+                    <td width="60%">Whether the spawned destructible can be adjusted if it's spawned inside the object that caused destruction. Applies to registered destruction objects that are set to sweep replicated transform</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSInstanceHidingMode</td>
+                    <td width="20%" class="prop_display_name_style">InstanceHidingType</td>
+                    <td width="60%">Defines how proxy instance hidings is handled</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">HiddenOffset</td>
+                    <td width="60%">Location Z offset of the instance when hiding type is set to Offset</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">RespawnDistance</td>
+                    <td width="60%">Squared distance from the player to an instance at which the destroyed instance can be respawned</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">RespawnBlockTypes</td>
+                    <td width="60%">An instance won't respawn if any object of this type is overlapping the spawn spot</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">RespawnBoundsMultiplier</td>
+                    <td width="60%">Multiplies the mesh bounds used for checking if anything blocks instance respawn</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">DestructibleBoundsCheckTolerance</td>
+                    <td width="60%">Whether to check destructible bounds to see if they changed enough to consider the destructible as visually damaged. Set to &lt; 0 to disable</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TEnumAsByte&lt;ECollisionChannel&gt;</td>
+                    <td width="20%" class="prop_display_name_style">RadialDmgPreventionChannel</td>
+                    <td width="60%">Radial damage blocking channel used on initial instance-to-destructible radial damage event</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">FakeRadialDmgPreventionTypes</td>
+                    <td width="60%">Object types that prevent instances from getting damaged by fake radial damage</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FGameplayTagContainer</td>
+                    <td width="20%" class="prop_display_name_style">Tags</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">TagAttributes</td>
+                    <td width="60%">Custom attributes like exp, money etc.</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+                    <td width="20%" class="prop_display_name_style">CustomData</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructibleInfo</div>
+            </td>
+            <td width="25%">
+              <div>Holds information about a single destructible</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSProxyInstance</td>
+                    <td width="20%" class="prop_display_name_style">ProxyInstance</td>
+                    <td width="60%">The proxy instance the destructible was spawned in place for</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">DamageAsset</td>
+                    <td width="60%">The hit proxy' damage asset</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ImplementsInterface</td>
+                    <td width="60%">Whether the destructible implements the destructible interface</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FBoxSphereBounds</td>
+                    <td width="20%" class="prop_display_name_style">InitialBounds</td>
+                    <td width="60%">Bounds cached during spawning</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructibleInstance</div>
+            </td>
+            <td width="25%">
+              <div>Identifies a destructible instance</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">DestructibleObject</td>
+                    <td width="60%">The spawned object</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">ID</td>
+                    <td width="60%">Optional ID - this is NOT the proxy instance index</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructiblePool</div>
+            </td>
+            <td width="25%">
+              <div>Holds the spawned destructibles</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">PerInstanceMap</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructiblePoolContainer</div>
+            </td>
+            <td width="25%">
+              <div>Container that holds the destructible pools and destructible info for each destructible instance</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">Pools</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">Infos</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructibleSpawnParams</div>
+            </td>
+            <td width="25%">
+              <div>Destructible spawn settings</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">UClass*</td>
+                    <td width="20%" class="prop_display_name_style">Class</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">SpawnTransform</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">AActor*</td>
+                    <td width="20%" class="prop_display_name_style">Owner</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">APawn*</td>
+                    <td width="20%" class="prop_display_name_style">Instigator</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">ESpawnActorCollisionHandlingMethod</td>
+                    <td width="20%" class="prop_display_name_style">CollisionHandlingOverride</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructionObjectDetectionParams</div>
+            </td>
+            <td width="25%">
+              <div>Settings used by destruction objects to detect proxy instances around them</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">MassOverride</td>
+                    <td width="60%">Mass is sourced from detection bodies by default. Set this to &gt;= 0.0 to override it</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">LinearHitForceMultiplier</td>
+                    <td width="60%">Force multiplier for linear force. Give a high value to make destruction easier</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">AngularHitForceMultiplier</td>
+                    <td width="60%">Force multiplier for angular force</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">DetectFwdandUpOnly</td>
+                    <td width="60%">Limits detection axis to forward and up only</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">BoundsOriginOverrideOffset</td>
+                    <td width="60%">Center offset override for custom bounds</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">BoundsOverride</td>
+                    <td width="60%">Detection bounds override</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">RotationAlignedBounds</td>
+                    <td width="60%">Whether the detection box is aligned to the object's rotation</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSDestructionObjectTagFilterType</td>
+                    <td width="20%" class="prop_display_name_style">ComponentTagFilter</td>
+                    <td width="60%">Whether we detect proxies using tagged components only or we exclude them</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FName</td>
+                    <td width="20%" class="prop_display_name_style">ComponentTag</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">DetectionBoundsScale</td>
+                    <td width="60%">Detection bounds size multiplier</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">SpeedOffset</td>
+                    <td width="60%">Detection trace is offset dynamically in the actor's velocity direction. This value defines how big the offset is</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructionObjectInfo</div>
+            </td>
+            <td width="25%">
+              <div>Current information about an object that can cause destruction</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSDestructionObjectParams</td>
+                    <td width="20%" class="prop_display_name_style">Params</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSObjectWithID</td>
+                    <td width="20%" class="prop_display_name_style">DestructionObject</td>
+                    <td width="60%">The object that owns the primitives and/or FBodyInstances that can cause destruction</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;AActor&gt;</td>
+                    <td width="20%" class="prop_display_name_style">DestructionActor</td>
+                    <td width="60%">Destruction object cast as an actor (most common case)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">HitForceThreshold</td>
+                    <td width="60%">Cached from last hit proxy damage setup</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">CollidingwithProxies</td>
+                    <td width="60%">Whether the actor currently can block destructible proxy collisions (not enough force to damage destructibles)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">Mass</td>
+                    <td width="60%">Current calculated mass</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">CurrentHitForce</td>
+                    <td width="60%">Current calculated force</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">BoundsOrigin</td>
+                    <td width="60%">Current detection bound world origin</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">BoundsExtent</td>
+                    <td width="60%">Current detection bound size</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">BoundsLocalOffset</td>
+                    <td width="60%">Current detection bounds local origin offset</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ImplementsDestObjectInterface</td>
+                    <td width="60%">Whether the object implements destruction object interface</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">PrevRepTransform</td>
+                    <td width="60%">Cached previous frame transform</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ShouldUpdate</td>
+                    <td width="60%">Whether the object should be updated this frame</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">LastDetectionSuccesful</td>
+                    <td width="60%">Whether we detected anything the last time detection was triggered</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">LastDamageAssetHit</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UPrimitiveComponent&gt;</td>
+                    <td width="20%" class="prop_display_name_style">LastInstMeshHit</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">LastInstanceHit</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">Transform</td>
+                    <td width="60%">Current transform of the object. It may be the replicated transform</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">LocalTransform</td>
+                    <td width="60%">Actual transform of the object</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">LinearVelocity</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">AngularVelocity</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">Teleported</td>
+                    <td width="60%">Whether the object teleported last frame</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">DetectionPoint</td>
+                    <td width="60%">The point used to find the closest proxy detected. Offset depending on velocity</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SimulatingDestruction</td>
+                    <td width="60%">Whether the object is currently simulating destruction (network)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">CurrentTick</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructionObjectNetworkParams</div>
+            </td>
+            <td width="25%">
+              <div>Destruction object network settings</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSSimulatedProxyDestructionMode</td>
+                    <td width="20%" class="prop_display_name_style">SimulatedProxyDestructionMode</td>
+                    <td width="60%">How do we treat the actor if it is a simulated proxy in a networked game</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">SweepTrMinHitForceMultiplier</td>
+                    <td width="60%">Don't simulate destruction if current force is smaller than the force required to cause destruction multiplied by this value</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">SweepTrMaxHitForceMultiplier</td>
+                    <td width="60%">Don't simulate destruction if current force is bigger than the force required to cause destruction multiplied by this value</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">SweepTrSquaredErrorToleranceforMinForce</td>
+                    <td width="60%">Allow destruction simulation below the threshold set by SweepTrMinHitForceMultiplier if the squared difference between local and replicated transform is bigger than this</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructionObjectOptimizationParams</div>
+            </td>
+            <td width="25%">
+              <div>Destruction object optimization settings</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SkipNarrowPhase</td>
+                    <td width="60%">If true we'll only detect proxies based on bounding boxes (it is recommended to be true since proper collision detection is handled later anyway)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">UseSimpleCollisionToggle</td>
+                    <td width="60%">Whether to update collision response by modyfing the FBodyInstances directly. Does not work properly with skeletal mesh components so
+eg. if a car is made of static meshes only or the user handles FBodyInstance creation manually this can be set to true
+If set to false the response is set on the primitives AND the FBodyInstances have to be rewelded every time we change response which is expensive</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">EIDSDestructionPrimCachingRule</td>
+                    <td width="20%" class="prop_display_name_style">PrimitiveCachingRule</td>
+                    <td width="60%">Whether to cache destruction primitive list as an optimization. If set to cache the user has to mark the list dirty whenever a component is added or removed to/from the object</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">TickThrottleTickRange</td>
+                    <td width="60%">Changes update rate depending on the object's speed
+X: max update rate when throttled at min speed
+Y: max update rate when throttled at max speed
+Set X to &lt;= 0.0 to disable throttling (will update every frame)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">TickThrottleSpeedRange</td>
+                    <td width="60%">Changes update rate depending on the object's speed
+X: min speed
+Y: max speed</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSDestructionObjectParams</div>
+            </td>
+            <td width="25%">
+              <div>Destruction object settings</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSDestructionObjectDetectionParams</td>
+                    <td width="20%" class="prop_display_name_style">DetectionParams</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSDestructionObjectOptimizationParams</td>
+                    <td width="20%" class="prop_display_name_style">OptimizationParams</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FIDSDestructionObjectNetworkParams</td>
+                    <td width="20%" class="prop_display_name_style">NetworkParams</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSHiddenInstancesContainer</div>
+            </td>
+            <td width="25%">
+              <div>Holds and manages lists of hidden instances per proxy</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody />
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSHiddenInstancesInfo</div>
+            </td>
+            <td width="25%">
+              <div>Holds a list of hidden instances for a proxy</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">InstanceIndexes</td>
+                    <td width="60%">Hidden instances</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSNonSetupProxyInfo</div>
+            </td>
+            <td width="25%">
+              <div>Info about proxies whose classes are not setup for damage like DamagableISMC. Used as a workaround to support default ISM/HISM classes</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">Proxy</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">Alive</td>
+                    <td width="60%">Whether the proxy is currently valid</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSObjectWithID</div>
+            </td>
+            <td width="25%">
+              <div>Identifies a single UE object usually an actor instance
+
+ID is optional but can be useful for identifying a different object eg. an FBodyInstance inside a primitive component</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">Object</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">ID</td>
+                    <td width="60%">Optional ID</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSProxyInstance</div>
+            </td>
+            <td width="25%">
+              <div>Identifies a single proxy instance, eg. a single instance of an UInstancedStaticMeshComponent</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">InstanceIndex</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSProxyInstanceInfo</div>
+            </td>
+            <td width="25%">
+              <div>Holds additional information about a proxy instance</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">Damage</td>
+                    <td width="60%">Current damage value</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSSavedHiddenInstancesContainer</div>
+            </td>
+            <td width="25%">
+              <div>Save friendly hidden instance data</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">InstanceInfo</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSSavedHiddenInstancesInfo</div>
+            </td>
+            <td width="25%">
+              <div>Save friendly instance list</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">Proxy</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">InstanceIndexes</td>
+                    <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSSubsystemTickFunction</div>
+            </td>
+            <td width="25%">
+              <div>IDS Subsystem tick function</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody />
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FIDSUpdatedProxies</div>
+            </td>
+            <td width="25%">
+              <div>Holds references to all registered proxies the system manages</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody />
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 class="title_style">Enums</h2>
+      <hr />
+      <table>
+        <tbody>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSDestructibleNetworkingMode</div>
+            </td>
+            <td width="60%">
+              <div>Defines how destructibles are replicated</div>
+            </td>
+            <td width="25%">
+              <pre>ClientAuthoritative
+ClientReplicated
+Server
+EIDSDestructibleNetworkingMode_MAX (EIDSDestructible Networking Mode MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSDestructiblePoolingResult</div>
+            </td>
+            <td width="60%">
+              <div>Type of result after destructible spawn request</div>
+            </td>
+            <td width="25%">
+              <pre>Failed
+AlreadySpawned
+DedicatedServerDummy
+Reused
+SpawnedNew
+EIDSDestructiblePoolingResult_MAX (EIDSDestructible Pooling Result MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSDestructibleRemovalHandling</div>
+            </td>
+            <td width="60%">
+              <div>Defines how to handle the removal of destructibles from the world</div>
+            </td>
+            <td width="25%">
+              <pre>RemoveIfOutOfRange
+RemoveIfOutOfRangeOrNotRendered
+AlwaysRemove
+NeverRemove
+EIDSDestructibleRemovalHandling_MAX (EIDSDestructible Removal Handling MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSDestructionObjectTagFilterType</div>
+            </td>
+            <td width="60%">
+              <div>Used to filter destruction components</div>
+            </td>
+            <td width="25%">
+              <pre>OnlyTaggedComponents
+ExcludeTaggedComponents
+EIDSDestructionObjectTagFilterType_MAX (EIDSDestruction Object Tag Filter Type MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSDestructionPrimCachingRule</div>
+            </td>
+            <td width="60%">
+              <div>Defines whether the object can cache primitive list (optimization)
+If set to cached the user has to mark the object dirty whenever a destruction body (component) is added or removed from the object</div>
+            </td>
+            <td width="25%">
+              <pre>Cached
+Dirty
+NeverCache
+EIDSDestructionPrimCachingRule_MAX (EIDSDestruction Prim Caching Rule MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSInstanceHidingMode</div>
+            </td>
+            <td width="60%">
+              <div>Defines how to handle instance hiding</div>
+            </td>
+            <td width="25%">
+              <pre>Nothing
+OffsetZ
+ScaleToZero
+OpacityMaskAndBodyInstanceCollisionToggle
+Custom
+EIDSInstanceHidingMode_MAX (EIDSInstance Hiding Mode MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSInstanceVisibilityInstigatorType</div>
+            </td>
+            <td width="60%">
+              <div>Identifies the action responsible for toggling instance visibility</div>
+            </td>
+            <td width="25%">
+              <pre>None
+SystemReset
+MarkRenderDirty
+Respawn
+WorldActor
+UndamagedSwitch
+Replication
+ForceUpdate
+SaveRestore
+UnregisteredMesh
+DeferredReplication
+IndexUpdateRemoved
+IndexUpdateRelocated
+IndexUpdateCleared
+EIDSInstanceVisibilityInstigatorType_MAX (EIDSInstance Visibility Instigator Type MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">EIDSSimulatedProxyDestructionMode</div>
+            </td>
+            <td width="60%">
+              <div>Defines how destruction is handled by simulated proxy destruction objects on client authority destructibles</div>
+            </td>
+            <td width="25%">
+              <pre>Default
+SweepReplicatedTransform
+EIDSSimulatedProxyDestructionMode_MAX (EIDSSimulated Proxy Destruction Mode MAX)</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
