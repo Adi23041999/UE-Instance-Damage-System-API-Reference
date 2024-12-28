@@ -1,18 +1,18 @@
 <html xmlns="http://www.w3.org/TR/REC-html40">
   <head>
-    <title>Respawn Instances</title>
+    <title>Get Proxy Hash</title>
     <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
   </head>
   <body>
     <div id="content_container">
       <a class="navbar_style" href="../../index.html">IDS2_API_Reference</a>
       <a class="navbar_style">&gt;</a>
-      <a class="navbar_style" href="../IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
+      <a class="navbar_style" href="../IDSFunctionLibrary.html">IDSFunctionLibrary</a>
       <a class="navbar_style">&gt;</a>
-      <a class="navbar_style">Respawn Instances</a>
-      <h1 class="title_style">Respawn Instances</h1>
-      <p>Handles instance respawn</p>
-      <img class="node_image_style" src="../img/nd_img_RespawnInstances.jpg" />
+      <a class="navbar_style">Get Proxy Hash</a>
+      <h1 class="title_style">Get Proxy Hash</h1>
+      <p>Gets the proxy instance hash value</p>
+      <img class="node_image_style" src="../img/nd_img_GetProxyHash.jpg" />
       <h3 class="title_style">Inputs</h3>
       <table>
         <colgroup>
@@ -22,17 +22,8 @@
         <tbody>
           <tr>
             <td>
-              <div class="param_name title_style">In</div>
-              <div class="param_type">Exec</div>
-            </td>
-            <td>
-              <p />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="param_name title_style">Target</div>
-              <div class="param_type">Instance Damage Subsystem Object Reference</div>
+              <div class="param_name title_style">Proxy Instance</div>
+              <div class="param_type">IDSProxy Instance Structure</div>
             </td>
             <td>
               <p />
@@ -49,11 +40,11 @@
         <tbody>
           <tr>
             <td>
-              <div class="param_name title_style">Out</div>
-              <div class="param_type">Exec</div>
+              <div class="param_name title_style">Return Value</div>
+              <div class="param_type">Integer64</div>
             </td>
             <td>
-              <p />
+              <p>Gets the proxy instance hash value</p>
             </td>
           </tr>
         </tbody>

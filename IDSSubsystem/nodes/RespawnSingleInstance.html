@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/TR/REC-html40">
   <head>
-    <title>Swap Proxy</title>
+    <title>Respawn Single Instance</title>
     <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
   </head>
   <body>
@@ -9,10 +9,10 @@
       <a class="navbar_style">&gt;</a>
       <a class="navbar_style" href="../IDSSubsystem.html">IDSSubsystem (Instance Damage Subsystem)</a>
       <a class="navbar_style">&gt;</a>
-      <a class="navbar_style">Swap Proxy</a>
-      <h1 class="title_style">Swap Proxy</h1>
-      <p>Swaps the proxy instance with a destructible if the proxy is valid (only hides the instance otherwise)</p>
-      <img class="node_image_style" src="../img/nd_img_SwapProxy.jpg" />
+      <a class="navbar_style">Respawn Single Instance</a>
+      <h1 class="title_style">Respawn Single Instance</h1>
+      <p>Respawns a single proxy instance</p>
+      <img class="node_image_style" src="../img/nd_img_RespawnSingleInstance.jpg" />
       <h3 class="title_style">Inputs</h3>
       <table>
         <colgroup>
@@ -49,20 +49,11 @@
           </tr>
           <tr>
             <td>
-              <div class="param_name title_style">Instigator</div>
-              <div class="param_type">Controller Object Reference</div>
+              <div class="param_name title_style">Mark Render Dirty</div>
+              <div class="param_type">Boolean</div>
             </td>
             <td>
-              <p>the controller that is responsible for the switch</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="param_name title_style">Causer</div>
-              <div class="param_type">Object Reference</div>
-            </td>
-            <td>
-              <p>the actual object that caused the switch</p>
+              <p />
             </td>
           </tr>
         </tbody>
@@ -85,11 +76,11 @@
           </tr>
           <tr>
             <td>
-              <div class="param_name title_style">Destructible</div>
-              <div class="param_type">IDSDestructible Instance Structure</div>
+              <div class="param_name title_style">Return Value</div>
+              <div class="param_type">Boolean</div>
             </td>
             <td>
-              <p />
+              <p>false if failed to respawn or the instance wasn't hidden</p>
             </td>
           </tr>
         </tbody>
